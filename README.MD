@@ -102,8 +102,6 @@ We will now install the necessary tools to gain access to the Arduino Board. Thi
 
 ### 4.2 Output
 
-<img src="docs/media/4-demo.gif" alt="Output" width="100%">
-
 [4-Demo-Video.webm](https://github.com/gunarakulangunaretnam/ai-speech-autolight-system/assets/45822509/9ca5aa73-525b-4463-8285-25092bbb079c)
 
 

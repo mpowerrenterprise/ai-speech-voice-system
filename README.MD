@@ -104,7 +104,7 @@ We will now install the necessary tools to gain access to the Arduino Board. Thi
 
 <img src="docs/media/4-demo.gif" alt="Output" width="100%">
 
-[![Watch the video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=OzbovR35Tyc)
+[4-Demo-Video.webm](https://github.com/gunarakulangunaretnam/ai-speech-autolight-system/assets/45822509/9ca5aa73-525b-4463-8285-25092bbb079c)
 
 
 ## Social Links

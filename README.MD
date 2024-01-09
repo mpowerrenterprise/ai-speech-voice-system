@@ -104,6 +104,9 @@ We will now install the necessary tools to gain access to the Arduino Board. Thi
 
 <img src="docs/media/4-demo.gif" alt="Output" width="100%">
 
+[![Watch the video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=OzbovR35Tyc)
+
+
 ## Social Links
 
 - [Linkedin Profile](https://www.linkedin.com/in/gunarakulangunaretnam)

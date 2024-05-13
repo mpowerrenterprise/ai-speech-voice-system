@@ -1,4 +1,4 @@
-# AI Speech AutoLihgt System
+# AI Voice AutoLihgt System
 
 ## Repo Structure
 

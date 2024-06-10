@@ -1,4 +1,4 @@
-# AI VOICE AUTOLIHGT SYSTEM
+# AI Voice AutoLihgt System
 
 ## Repo Structure
 
@@ -105,7 +105,7 @@ We will now install the necessary tools to gain access to the Arduino Board. Thi
 [4-demo-video.webm](https://github.com/gunarakulangunaretnam/ai-speech-autolight-system/assets/45822509/9ef5b3f7-ffd7-4c2d-92b6-1e402a64fe6d)
 
 
-# CONTACT
+# Contact
 
 ### Website: 
 

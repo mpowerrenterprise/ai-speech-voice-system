@@ -5,6 +5,7 @@ _RECOGNIZER = sr.Recognizer()
 
 def speech_to_text():
 
+def speech_to_text():
     try:
         with sr.Microphone() as source:
             print("Listening...")
@@ -22,4 +23,8 @@ def speech_to_text():
 
     except sr.RequestError as e:
         print(f"Error connecting to Google Web Speech API: {e}")
+        return None
+
+    except OSError as e:
+        print(f"Microphone error: {e}")
         return None

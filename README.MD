@@ -1,4 +1,4 @@
-# AI Voice AutoLihgt System
+# AI Voice AutoLight System
 
 ## Repo Structure
 
@@ -8,7 +8,7 @@
     ├── source                                 # Contains project source code.
     │   ├── modules                                # Contains custom dependencies.  
     │   ├── main.py                                # main file.
-    └── README.MD                              # Readme Content.
+    └── README.MD                              # Readme content.
 ```
 
 ## 01 Introduction
@@ -56,20 +56,20 @@ To upload Firmata, open Arduino IDE and choose the correct COM port and **File -
 
 **Note:** After uploading StandardFirmata to the Arduino Board, Python can be used to program it.
 
-### 3.3 Setup Software
+### 3.3 Software Setup
 
 We will now install the necessary tools to gain access to the Arduino Board. This project utilizes essential libraries, including Speech Recognition and PyFirmata. We need to install all the required dependencies on the development computer.
 
 - **Step 01:** Install Python
 
   ```
-  Ver: 3.8.5 is Recommended (www.python.org)
+  Ver: 3.8.5 is recommended (www.python.org)
   ```
 
 - **Step 02:** Navigate to the specified location in CMD/Terminal.
 
   ```
-  ai-speech-autolight-system/docs/requirements.txt
+  ai-speech-voice-system/docs/requirements.txt
   ```
 
 - **Step 03:** Execute the given command to install all dependencies.
@@ -83,14 +83,20 @@ We will now install the necessary tools to gain access to the Arduino Board. Thi
 - **Source Directory:**
 
   ```
-  ai-speech-autolight-system\source\main.py
+  ai-speech-voice-system/source/main.py
   ```
 
-### 4.1 Setps to run
+### 4.1 Steps to run
 
 - **Step 01:** Connect the Arduino to the development computer.
 
-- **Step 02:** Modify the script to reflect the appropriate COM port.
+- **Step 02:** Set the Arduino serial port.
+
+  You can either update the `ARDUINO_PORT` environment variable (recommended) or modify the script directly.
+
+  ```
+  ARDUINO_PORT=COM4 python source/main.py
+  ```
 
   ![Change COM Port](docs/media/3-change-com-port.png)
 

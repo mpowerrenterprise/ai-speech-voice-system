@@ -1,42 +1,59 @@
-import modules.speech_detection as SpeechDetection
-from pyfirmata import Arduino, util
+import os
 
-board = Arduino('COM4') # Change 'COM4' to your Arduino's serial port
+import modules.speech_detection as SpeechDetection
+from pyfirmata import Arduino
+
+ARDUINO_PORT = os.getenv("ARDUINO_PORT", "COM4")
+board = Arduino(ARDUINO_PORT)  # Change via ARDUINO_PORT env var if needed
 
 red_pin = board.get_pin('d:13:o')     # Digital output pin 13
 green_pin = board.get_pin('d:12:o')   # Digital output pin 12
 blue_pin = board.get_pin('d:11:o')    # Digital output pin 11
 
-while True:
-	text = SpeechDetection.speech_to_text()
+COLOR_PINS = {
+	"red": red_pin,
+	"white": red_pin,
+	"green": green_pin,
+	"blue": blue_pin,
+}
 
-	print(text)
 
-	if text is not None:
-		if "turn on" in text and ("red" in text or "white" in text):
-			red_pin.write(1)
+def set_all(state: int) -> None:
+	red_pin.write(state)
+	green_pin.write(state)
+	blue_pin.write(state)
 
-		elif "turn off" in text and ("red" in text or "white" in text):
-			red_pin.write(0)
 
-		elif "turn on" in text and "green" in text:
-			green_pin.write(1)
+def handle_command(command: str) -> None:
+	if "turn on all" in command:
+		set_all(1)
+		return
+	if "turn off all" in command:
+		set_all(0)
+		return
 
-		elif "turn off" in text and "green" in text:
-			green_pin.write(0)
+	if "turn on" in command:
+		state = 1
+	elif "turn off" in command:
+		state = 0
+	else:
+		return
 
-		elif "turn on" in text and "blue" in text:
-			blue_pin.write(1)
+	for color, pin in COLOR_PINS.items():
+		if color in command:
+			pin.write(state)
+			return
 
-		elif "turn off" in text and "blue" in text:
-			blue_pin.write(0)
+try:
+	while True:
+		text = SpeechDetection.speech_to_text()
 
-		elif "turn on all" in text:
-			red_pin.write(1)
-			green_pin.write(1)
-			blue_pin.write(1)
+		print(text)
 
-		elif "turn off all" in text:
-			red_pin.write(0)
-			green_pin.write(0)
-			blue_pin.write(0)
+		if text is None:
+			continue
+
+		command = text.strip().lower()
+		handle_command(command)
+finally:
+	board.exit()

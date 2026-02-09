@@ -1,19 +1,20 @@
 import speech_recognition as sr
 
 _RECOGNIZER = sr.Recognizer()
-_RECOGNIZER.pause_threshold = 1
 
+
+def speech_to_text():
 
 def speech_to_text():
     try:
         with sr.Microphone() as source:
             print("Listening...")
-            _RECOGNIZER.adjust_for_ambient_noise(source, duration=0.5)
+            _RECOGNIZER.pause_threshold = 1
             audio = _RECOGNIZER.listen(source, phrase_time_limit=5)  # Listen to the microphone for 5 seconds
 
         print("Recognizing...")
         text = _RECOGNIZER.recognize_google(audio)
-
+        
         return text
 
     except sr.UnknownValueError:
